@@ -57,7 +57,6 @@ RAG-BASED-QA-BOT/
 ## ⚙️ Installation
 
 ### 1️⃣ Clone the repository
-```bash
 git clone https://github.com/musaarfah/RAG-BASED-QA-BOT.git
 cd RAG-BASED-QA-BOT
 
@@ -69,8 +68,8 @@ venv\Scripts\activate     # Windows
 ### Install Dependencies
 pip install -r requirements.txt
 
-🛠 Configuration
-PostgreSQL Connection
+### 🛠 Configuration
+# PostgreSQL Connection
 
 Edit structured/demo_query.py to match your database settings:
 
@@ -83,7 +82,7 @@ PG_CONFIG = {
 }
 
 
-Schema File
+### Schema File
 
 Place your schema definition in structured/example_schema.yaml
 
@@ -102,14 +101,15 @@ tables:
       - name: salary
         type: INTEGER
 
-▶️ Running the App
+### ▶️ Running the App
 streamlit run main.py
 
 The app will open in your browser at:
 http://localhost:8501
 
-💡 Usage Guide
-🔍 Unstructured Mode
+### 💡 Usage Guide
+
+## 🔍 Unstructured Mode
 
 Switch Mode in sidebar to Unstructured
 
@@ -121,7 +121,7 @@ Click Get Answer
 
 View the retrieved context and generated answer
 
-📊 Structured Mode
+## 📊 Structured Mode
 
 Switch Mode in sidebar to Structured
 
@@ -131,7 +131,7 @@ Click Run SQL
 
 View generated SQL, parameters, and results
 
-🧠 Example Queries
+### 🧠 Example Queries
 
 Unstructured:
 
@@ -145,7 +145,7 @@ Structured:
 
 "Employees hired after 2020 in Marketing"
 
-📦 Dependencies
+### 📦 Dependencies
 
 Main packages used:
 
@@ -171,7 +171,7 @@ ollama
 
 Full list in requirements.txt
 
-## 🖼 Screenshots
+### 🖼 Screenshots
 
 ### 🔍 Unstructured Mode
 ![Unstructured Mode](docs/screenshots/unstructured_mode.png)
@@ -180,7 +180,7 @@ Full list in requirements.txt
 ![Structured Mode](docs/screenshots/structured_mode.png)
 
 
-🛡 Safety & Limitations
+### 🛡 Safety & Limitations
 
 SQL queries are generated with parameterized placeholders to prevent SQL injection
 
