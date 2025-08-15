@@ -61,17 +61,17 @@ git clone https://github.com/musaarfah/RAG-BASED-QA-BOT.git
 cd RAG-BASED-QA-BOT
 
 ### Create Virtual Environment
-python -m venv venv
-source venv/bin/activate  # macOS/Linux
-venv\Scripts\activate     # Windows
+- python -m venv venv
+- source venv/bin/activate  # macOS/Linux
+- venv\Scripts\activate     # Windows
 
 ### Install Dependencies
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ### 🛠 Configuration
 # PostgreSQL Connection
 
-Edit structured/demo_query.py to match your database settings:
+Edit *structured/demo_query.py* to match your database settings:
 
 PG_CONFIG = {
     "host": "localhost",
@@ -84,7 +84,7 @@ PG_CONFIG = {
 
 ### Schema File
 
-Place your schema definition in structured/example_schema.yaml
+Place your schema definition in *structured/example_schema.yaml*
 
 Follows format:
 
@@ -111,80 +111,60 @@ http://localhost:8501
 
 ## 🔍 Unstructured Mode
 
-Switch Mode in sidebar to Unstructured
-
-Upload documents
-
-Enter your natural language question
-
-Click Get Answer
-
-View the retrieved context and generated answer
+- Switch Mode in sidebar to Unstructured
+- Upload documents
+- Enter your natural language question
+- Click Get Answer
+- View the retrieved context and generated answer
 
 ## 📊 Structured Mode
 
-Switch Mode in sidebar to Structured
-
-Enter a database-related question (e.g., "List all employees in HR")
-
-Click Run SQL
-
-View generated SQL, parameters, and results
+- Switch Mode in sidebar to Structured
+- Enter a database-related question (e.g., "List all employees in HR")
+- Click Run SQL
+- View generated SQL, parameters, and results
 
 ### 🧠 Example Queries
 
-Unstructured:
+# Unstructured:
 
-"Summarize the document in 3 bullet points"
+1. "Summarize the document in 3 bullet points"
+2. "What is the company's mission statement?"
 
-"What is the company's mission statement?"
+# Structured:
 
-Structured:
-
-"Show total salary per department"
-
-"Employees hired after 2020 in Marketing"
+1. "Show total salary per department"
+2. "Employees hired after 2020 in Marketing"
 
 ### 📦 Dependencies
 
-Main packages used:
+# Main packages used:
 
-streamlit
-
-psycopg2
-
-sqlglot
-
-faiss-cpu
-
-sentence-transformers
-
-langchain
-
-PyMuPDF
-
-python-docx
-
-pypandoc
-
-ollama
+- streamlit
+- psycopg2
+- sqlglot
+- faiss-cpu
+- sentence-transformers
+- langchain
+- PyMuPDF
+- python-docx
+- pypandoc
+- ollama
 
 Full list in requirements.txt
 
 ### 🖼 Screenshots
 
-### 🔍 Unstructured Mode
+## 🔍 Unstructured Mode
 ![Unstructured Mode](docs/screenshots/unstructured_mode.png)
 
-### 📊 Structured Mode
+## 📊 Structured Mode
 ![Structured Mode](docs/screenshots/structured_mode.png)
 
 
 ### 🛡 Safety & Limitations
 
-SQL queries are generated with parameterized placeholders to prevent SQL injection
-
-Model accuracy depends on schema clarity and natural language phrasing
-
-Large documents may take time to process
+1. SQL queries are generated with parameterized placeholders to prevent SQL injection
+2. Model accuracy depends on schema clarity and natural language phrasing
+3. Large documents may take time to process
 
