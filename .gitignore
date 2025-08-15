@@ -1,4 +1,57 @@
+# Python cache & artifacts
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment & config files
 .env
+*.env
+*.ini
+*.cfg
+*.toml
+
+# Data & model files
+*.db
+*.sqlite
+*.sqlite3
+*.yaml
+*.json
+*.csv
+*.tsv
+*.parquet
+*.pkl
+*.npz
+*.npy
+huggingface/
+D:/huggingface/
+*.bin
+*.pt
+*.ckpt
+
+# FAISS indexes
+*.index
+
+# Ollama / LLM cache
+ollama_models/
+ollama_cache/
+
+# Node / frontend
 node_modules/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS junk
+.DS_Store
+Thumbs.db
