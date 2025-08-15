@@ -34,24 +34,28 @@ Built with:
 ```text
 RAG-BASED-QA-BOT/
 │
-├── main.py # Streamlit app entry point
-├── requirements.txt # Python dependencies
-├── .gitignore # Git ignore file
+├── main.py                      # Streamlit app entry point
+├── requirements.txt             # Python dependencies
+├── .gitignore                   # Git ignore file
 │
-├── structured/ # Structured (SQL) query pipeline
+├── structured/                  # Structured (SQL) query pipeline
 │ ├── demo_query.py
 │ ├── schema_loader.py
 │ ├── sql_generator.py
 │ ├── query_runner.py
-│ └── example_schema.yaml
+│ ├── example_schema.yaml
+│ └── gen_yaml.py
 │
-├── unstructured/ # Unstructured (Document) RAG pipeline
-│ ├── document_loader.py
-│ ├── embed_store.py
+├── unstructured/                # Unstructured (Document) RAG pipeline
+│ ├── ingest.py
+│ ├── embedder.py
 │ ├── query_bot.py
-│ └── utils.py
+│ ├── vector_store_builder.py
+│ ├── vector_store_incremental.py
+│ └── test_query.py
 │
 └── README.md
+
 
 
 ---
