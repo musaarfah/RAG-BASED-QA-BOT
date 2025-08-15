@@ -30,6 +30,8 @@ Built with:
 ---
 
 ## 🗂 Project Structure
+
+```text
 RAG-BASED-QA-BOT/
 │
 ├── main.py # Streamlit app entry point
@@ -53,6 +55,8 @@ RAG-BASED-QA-BOT/
 
 
 ---
+```
+
 
 ## ⚙️ Installation
 
@@ -66,13 +70,18 @@ cd RAG-BASED-QA-BOT
 - venv\Scripts\activate     # Windows
 
 ### Install Dependencies
+```bash
 - pip install -r requirements.txt
+```
 
-### 🛠 Configuration
-# PostgreSQL Connection
+## 🛠 Configuration
+### PostgreSQL Connection
 
 Edit *structured/demo_query.py* to match your database settings:
 
+Here is my PostgreSQL config:
+
+```python
 PG_CONFIG = {
     "host": "localhost",
     "port": 5432,
@@ -80,6 +89,7 @@ PG_CONFIG = {
     "user": "postgres",
     "password": "your_password"
 }
+```
 
 
 ### Schema File
@@ -90,7 +100,7 @@ Follows format:
 
 tables:
   - name: employees
-    columns:
+    - columns:
       - name: id
         type: INTEGER
         pk: true
@@ -107,9 +117,9 @@ streamlit run main.py
 The app will open in your browser at:
 http://localhost:8501
 
-### 💡 Usage Guide
+## 💡 Usage Guide
 
-## 🔍 Unstructured Mode
+### 🔍 Unstructured Mode
 
 - Switch Mode in sidebar to Unstructured
 - Upload documents
@@ -117,28 +127,28 @@ http://localhost:8501
 - Click Get Answer
 - View the retrieved context and generated answer
 
-## 📊 Structured Mode
+### 📊 Structured Mode
 
 - Switch Mode in sidebar to Structured
 - Enter a database-related question (e.g., "List all employees in HR")
 - Click Run SQL
 - View generated SQL, parameters, and results
 
-### 🧠 Example Queries
+## 🧠 Example Queries
 
-# Unstructured:
+### Unstructured:
 
 1. "Summarize the document in 3 bullet points"
 2. "What is the company's mission statement?"
 
-# Structured:
+### Structured:
 
 1. "Show total salary per department"
 2. "Employees hired after 2020 in Marketing"
 
-### 📦 Dependencies
+## 📦 Dependencies
 
-# Main packages used:
+### Main packages used:
 
 - streamlit
 - psycopg2
@@ -153,16 +163,16 @@ http://localhost:8501
 
 Full list in requirements.txt
 
-### 🖼 Screenshots
+## 🖼 Screenshots
 
-## 🔍 Unstructured Mode
+### 🔍 Unstructured Mode
 ![Unstructured Mode](docs/screenshots/unstructured_mode.png)
 
-## 📊 Structured Mode
+### 📊 Structured Mode
 ![Structured Mode](docs/screenshots/structured_mode.png)
 
 
-### 🛡 Safety & Limitations
+## 🛡 Safety & Limitations
 
 1. SQL queries are generated with parameterized placeholders to prevent SQL injection
 2. Model accuracy depends on schema clarity and natural language phrasing
