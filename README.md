@@ -63,17 +63,27 @@ RAG-BASED-QA-BOT/
 ### 1️⃣ Clone the repository
 ```python
 git clone https://github.com/musaarfah/RAG-BASED-QA-BOT.git
+```
+```python
 cd RAG-BASED-QA-BOT
 ```
 
 ### Create Virtual Environment
-- python -m venv venv
-- *source venv/bin/activate*      # macOS/Linux
-- *venv\Scripts\activate*         # Windows
+
+```python
+python -m venv venv
+```
+
+```python
+source venv/bin/activate     # macOS/Linux
+```
+```python
+venv\Scripts\activate        # Windows
+```
 
 ### Install Dependencies
 ```bash
-- pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## 🛠 Configuration
