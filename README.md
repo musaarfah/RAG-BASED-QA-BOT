@@ -61,13 +61,15 @@ RAG-BASED-QA-BOT/
 ## ⚙️ Installation
 
 ### 1️⃣ Clone the repository
+```python
 git clone https://github.com/musaarfah/RAG-BASED-QA-BOT.git
 cd RAG-BASED-QA-BOT
+```
 
 ### Create Virtual Environment
 - python -m venv venv
-- source venv/bin/activate  # macOS/Linux
-- venv\Scripts\activate     # Windows
+- *source venv/bin/activate*      # macOS/Linux
+- *venv\Scripts\activate*         # Windows
 
 ### Install Dependencies
 ```bash
@@ -112,7 +114,10 @@ tables:
         type: INTEGER
 
 ### ▶️ Running the App
+
+```python
 streamlit run main.py
+```
 
 The app will open in your browser at:
 http://localhost:8501
