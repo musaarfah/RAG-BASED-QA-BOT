@@ -11,6 +11,8 @@ FAISS_PATH = "data/faiss_index/company_docs.index"
 META_PATH = "data/faiss_index/company_docs.pkl"
 EMBED_MODEL = "all-MiniLM-L6-v2"   # Embedding model for retrieval
 HF_MODEL = "google/flan-t5-base"   # Free Hugging Face LLM
+# HF_MODEL = "MBZUAI/LaMini-T5-738M"       # Better small instruction model
+
 TOP_K = 3
 # ================
 
