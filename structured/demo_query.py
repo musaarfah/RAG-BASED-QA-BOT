@@ -1,6 +1,6 @@
 # structured/demo_sql_query.py
 from structured.schema_loader import load_schema_yaml, schema_to_description
-from structured.sql_generator import generate_sql
+from structured.sql_generator_openai import generate_sql
 from structured.query_runner import run_query
 import json
 

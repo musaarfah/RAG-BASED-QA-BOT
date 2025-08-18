@@ -7,7 +7,7 @@ import unstructured.query_bot_openai as openai_bot
 import unstructured.vector_store_incremental as vector_store_incremental  # Import your incremental updater
 import importlib
 
-from structured.sql_generator import generate_sql
+from structured.sql_generator_openai import generate_sql
 from structured.query_runner import run_query
 from structured.schema_loader import load_schema_yaml, schema_to_description
 from structured.demo_query import PG_CONFIG  # Postgres config
