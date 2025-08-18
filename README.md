@@ -7,6 +7,7 @@ A hybrid **Retrieval-Augmented Generation** application that can:
 Built with:
 - **Streamlit** for the interactive UI
 - **FAISS** + `sentence-transformers` for vector search
+- **OpenAI** + `GPT-4 min` also for vector search
 - **Ollama** + `sqlcoder` for SQL generation
 - **psycopg2** for PostgreSQL integration
 
@@ -20,6 +21,7 @@ Built with:
 - Store embeddings in **FAISS**
 - Retrieve top relevant chunks for a query
 - Generate concise answers using a local LLM
+- Generate answer using the GPT module which are much better
 
 ### 📊 Structured Mode
 - Automatically load a PostgreSQL schema from YAML
@@ -39,22 +41,24 @@ RAG-BASED-QA-BOT/
 ├── .gitignore                   # Git ignore file
 │
 ├── structured/                  # Structured (SQL) query pipeline
-│ ├── demo_query.py
-│ ├── schema_loader.py
-│ ├── sql_generator.py
-│ ├── query_runner.py
-│ ├── example_schema.yaml
-│ └── gen_yaml.py
+│   ├── demo_query.py
+│   ├── schema_loader.py
+│   ├── sql_generator.py
+│   ├── query_runner.py
+│   ├── example_schema.yaml
+│   └── gen_yaml.py
 │
 ├── unstructured/                # Unstructured (Document) RAG pipeline
-│ ├── ingest.py
-│ ├── embedder.py
-│ ├── query_bot.py
-│ ├── vector_store_builder.py
-│ ├── vector_store_incremental.py
-│ └── test_query.py
+│   ├── ingest.py
+│   ├── embedder.py
+│   ├── query_bot.py
+│   ├── query_bot_openai.py
+│   ├── vector_store_builder.py
+│   ├── vector_store_incremental.py
+│   └── test_query.py
 │
 └── README.md
+
 
 
 
