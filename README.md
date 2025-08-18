@@ -7,7 +7,7 @@ A hybrid **Retrieval-Augmented Generation** application that can:
 Built with:
 - **Streamlit** for the interactive UI
 - **FAISS** + `sentence-transformers` for vector search
-- **OpenAI** + `GPT-4 min` also for vector search
+- **OpenAI** + `GPT-4 mini` also for vector search and SQL generation
 - **Ollama** + `sqlcoder` for SQL generation
 - **psycopg2** for PostgreSQL integration
 
