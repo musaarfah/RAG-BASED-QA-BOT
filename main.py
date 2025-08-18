@@ -1,5 +1,9 @@
 import streamlit as st
-from unstructured.query_bot import retrieve, generate_answer
+
+# Import both unstructured bot versions
+import unstructured.query_bot as hf_bot
+import unstructured.query_bot_openai as openai_bot
+
 from structured.sql_generator import generate_sql
 from structured.query_runner import run_query
 from structured.schema_loader import load_schema_yaml, schema_to_description
@@ -24,14 +28,20 @@ st.sidebar.markdown("---")
 # UNSTRUCTURED MODE
 # ============================
 if mode == "Unstructured":
-    top_k = st.sidebar.slider("Number of Chunks (Top K)", min_value=1, max_value=10, value=3)
+    # Choose engine: HuggingFace or OpenAI
+    engine = st.sidebar.radio("Choose Engine", ["HuggingFace", "OpenAI"])
 
+    top_k = st.sidebar.slider("Number of Chunks (Top K)", min_value=1, max_value=10, value=3)
     question = st.text_input("❓ Enter your question:")
 
     if st.button("Get Answer") and question.strip():
         with st.spinner("Retrieving answer..."):
-            results = retrieve(question, k=top_k)
-            answer = generate_answer(question, results)
+            if engine == "HuggingFace":
+                results = hf_bot.retrieve(question, k=top_k)
+                answer = hf_bot.generate_answer(question, results)
+            else:
+                results = openai_bot.retrieve(question, k=top_k)
+                answer = openai_bot.generate_answer(question, results)
 
             st.subheader("💡 Answer:")
             st.write(answer)
