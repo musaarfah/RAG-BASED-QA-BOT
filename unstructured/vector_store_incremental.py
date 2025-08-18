@@ -4,8 +4,8 @@ import os
 import pickle
 import faiss
 import numpy as np
-from ingest import extract_text
-from embedder import chunk_text, embed_chunks
+from .ingest import extract_text
+from .embedder import chunk_text, embed_chunks
 
 # ==== CONFIG ====
 DOCS_FOLDER = "data/documents"  # folder with all your PDFs/DOCs

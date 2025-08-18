@@ -1,8 +1,11 @@
 import streamlit as st
+import os
 
 # Import both unstructured bot versions
 import unstructured.query_bot as hf_bot
 import unstructured.query_bot_openai as openai_bot
+import unstructured.vector_store_incremental as vector_store_incremental  # Import your incremental updater
+import importlib
 
 from structured.sql_generator import generate_sql
 from structured.query_runner import run_query
@@ -28,9 +31,36 @@ st.sidebar.markdown("---")
 # UNSTRUCTURED MODE
 # ============================
 if mode == "Unstructured":
-    # Choose engine: HuggingFace or OpenAI
+    # Engine selector
     engine = st.sidebar.radio("Choose Engine", ["HuggingFace", "OpenAI"])
 
+    # Upload option
+    st.sidebar.subheader("📂 Upload Documents")
+    uploaded_files = st.sidebar.file_uploader(
+        "Upload PDFs/DOCs to add to knowledge base",
+        type=["pdf", "docx", "txt"],
+        accept_multiple_files=True
+    )
+
+    if uploaded_files:
+        DOCS_FOLDER = "data/documents"
+        os.makedirs(DOCS_FOLDER, exist_ok=True)
+
+        for uploaded_file in uploaded_files:
+            save_path = os.path.join(DOCS_FOLDER, uploaded_file.name)
+            with open(save_path, "wb") as f:
+                f.write(uploaded_file.getbuffer())
+            st.sidebar.success(f"✅ Saved: {uploaded_file.name}")
+
+        # Run incremental indexing
+        with st.spinner("📖 Updating vector database with new documents..."):
+            # This will re-run your vector_store_incremental pipeline
+            import importlib
+            importlib.reload(vector_store_incremental)
+
+        st.sidebar.success("✅ Vector DB updated with new documents!")
+
+    # Retrieval + Q&A
     top_k = st.sidebar.slider("Number of Chunks (Top K)", min_value=1, max_value=10, value=3)
     question = st.text_input("❓ Enter your question:")
 
@@ -51,6 +81,7 @@ if mode == "Unstructured":
                     st.markdown(f"**Source:** `{r['source']}`  — *Distance:* `{r['distance']:.4f}`")
                     st.write(r["text"])
                     st.markdown("---")
+
 
 # ============================
 # STRUCTURED MODE
